@@ -1,8 +1,12 @@
-from flask import Flask, escape, request
+from flask import Flask
 
 app = Flask(__name__)
 
 @app.route('/')
+def index():
+    # You can add any HTML/CSS to this
+    return f'Index page'
+
+@app.route('/hello')
 def hello():
-    name = request.args.get("name", "World")
-    return f'Hellooooo, {escape(name)}!'
+    return 'Hello, World!'

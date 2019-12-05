@@ -3,4 +3,4 @@
 2. pipenv shell
 3. pipenv install flask
 4. populate app script with boilerplating
-5. export FLASK_APP=hello.py 
+5. FLASK_APP=hello.py FLASK_ENV=development flask run 
