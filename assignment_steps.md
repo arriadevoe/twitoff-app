@@ -4,3 +4,4 @@
 3. pipenv install flask
 4. populate app script with boilerplating
 5. FLASK_APP=twitoff:APP FLASK_ENV=development flask run 
+6. FLASK_APP=twitoff:APP FLASK_ENV=development flask shell
