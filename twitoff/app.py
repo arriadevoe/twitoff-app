@@ -1,4 +1,3 @@
-import uuid
 from flask import Flask, render_template
 from .models import DB, Users, Tweets
 
@@ -22,7 +21,7 @@ def create_app():
     return app
 
     # DB.drop_all(), drops all tables
-    # DB.create_all(), creates all tables, not needed with the above?
+    # DB.create_all(), creates all tables, NEEDED
     # u1 = Users(name = "something")
     # t1 = Tweets(text = "some text")
     # t2 = Tweets(text = "some other text")
