@@ -20,6 +20,7 @@ def create_app():
 
     return app
 
+    # from twitoff.models import *
     # DB.drop_all(), drops all tables
     # DB.create_all(), creates all tables, NEEDED
     # u1 = Users(name = "something")
