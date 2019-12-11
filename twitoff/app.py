@@ -4,7 +4,7 @@ from .models import DB, Users, Tweets
 
 def create_app():
     app = Flask(__name__)
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite3'
     DB.init_app(app)
 
     # You can add any HTML/CSS to this
@@ -13,10 +13,11 @@ def create_app():
     # rand_user = User(name=rand_name)
     # DB.session.add(rand_u)
     # DB.session.commit()
-    
+
     @app.route('/')
     def root():
-        return render_template('base.html', title='Hello Page')
+        users = Users.query.all()
+        return render_template('base.html', title='Home', users=users)
 
     return app
 
