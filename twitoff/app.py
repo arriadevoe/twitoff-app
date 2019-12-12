@@ -14,4 +14,11 @@ def create_app():
         users = Users.query.all()
         return render_template('base.html', title='Home', users=users)
 
+    # Replaces authentication (login,etc) temporarily
+    @app.route('/reset')
+    def reset():
+        DB.drop_all()
+        DB.create_all()
+        return render_template('base.html', title='DB Reset!', users=[])
+
     return app
