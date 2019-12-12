@@ -11,3 +11,6 @@ TWITTER_AUTH.set_access_token(config('TWITTER_ACCESS_TOKEN'),config('TWITTER_ACC
 TWITTER = tweepy.API(TWITTER_AUTH)
 
 BASILICA = basilica.Connection(config('BASILICA_KEY'))
+
+# Useful functions
+# Came from playing with API on a python shell
