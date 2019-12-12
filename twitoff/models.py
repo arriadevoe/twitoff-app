@@ -17,7 +17,7 @@ class Tweets(DB.Model):
     # Many SQLALchemy datatypes available
     text = DB.Column(DB.Unicode(300), nullable=False) # Allows for emojis
     embedding = DB.Column(DB.PickleType, nullable=False) 
-    user_id = DB.Column(DB.Integer, DB.ForeignKey('users.id'), nullable=False)
+    user_id = DB.Column(DB.BigInteger, DB.ForeignKey('users.id'), nullable=False)
     user = DB.relationship("Users", backref=DB.backref('tweets', lazy=True))
 
     def __repr__(self):
