@@ -34,7 +34,7 @@ def add_or_update_user(screen_name):
             db_user.newest_tweet_id = tweets[0].id
 
         for tweet in tweets:
-            embedding = BASILICA.embed_sentence(tweet, model='twitter')
+            embedding = BASILICA.embed_sentence(tweet.text, model='twitter')
             db_tweet = Tweets(id=tweet.id, text=tweet.text, embedding=embedding)
             db_user.tweets.append(db_tweet)
         
