@@ -24,7 +24,7 @@ def create_app():
 
     @app.route('/user', methods=['POST'])
     @app.route('/user/<name>', methods=['GET'])
-    def user(name, message):
+    def user(name=None, message=''):
         name = name or request.values['user_name']
         try:
             if request.method == 'POST':
@@ -34,7 +34,7 @@ def create_app():
         except Exception as e: # very basic, could be more specific plus others
             message = f"Error adding {name}: {e}"
             tweets = []
-        return render_template('user.html', title='name', tweets=tweets, message=message)
+        return render_template('user.html', title=name, tweets=tweets, message=message)
 
 
     return app
